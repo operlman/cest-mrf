@@ -49,5 +49,5 @@ Once the packages are installed, run **deep_reco.py**
 
 The script will use the file dict.mat, generated in the previous steps, as well as the file acquired_data.mat, available in this folder.
 
-If you use this code in a scientific publication, please cite: 
-**X**.
+# If you use this code in a scientific publication, please cite: 
+X.
