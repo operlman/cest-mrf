@@ -29,25 +29,19 @@ It requires having python installed with the following packages:
 numpy, scipy, matplotlib, and torch.
 Suggested installation routes:
 
-1) Use pip (https://pip.pypa.io/en/stable/)
+1) pip (https://pip.pypa.io/en/stable/)
 
-   ---  OR ----
-   
-2) Use Anaconda (https://www.anaconda.com/products/individual-d)
+2) Anaconda (https://www.anaconda.com/products/individual-d)
+* a YAML file that allows creating the relevant environment is available in this folder: 'conda_environment.yml'
 
-a YAML file that allows creating the relevant environment is available in this folder: 'conda_environment.yml'
-   
-   ---  OR ----
-   
 3) Docker (https://www.docker.com/).
+* A docker-image with the required packages can be obtained by:
 
-A docker-image with the required packages can be obtained by:
-   
-   'docker pull operlman/pytroch_scipy_matplotlib_scikit-image'
+'docker pull operlman/pytroch_scipy_matplotlib_scikit-image'
    
 Once the packages are installed, run **deep_reco.py**
 
 The script will use the file dict.mat, generated in the previous steps, as well as the file acquired_data.mat, available in this folder.
 
-# If you use this code in a scientific publication, please cite: 
-X.
+**If you use this code in a scientific publication, please cite: 
+X**.
