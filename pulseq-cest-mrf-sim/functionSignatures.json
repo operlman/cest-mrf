@@ -1,0 +1,17 @@
+{
+"generate_mrf_cest_dictionary":
+{
+  "inputs":
+  [
+    {"name":"seq_fn", "kind":"optional", "type":"filepath=*.seq", "purpose":"Filename of the pulseq-file" },
+    {"name":"param_fn", "kind":"optional", "type":"filepath=*.yml,*.yaml", "purpose":"Filename of the simulation configuration file" }
+  ]
+},
+"read_mrf_simulation_params":
+{
+  "inputs":
+  [
+    {"name":"param_fn", "kind":"required", "type":"filepath=*.yml,*.yaml", "purpose":"Filename of the simulation configuration file" }
+  ]
+}
+}
