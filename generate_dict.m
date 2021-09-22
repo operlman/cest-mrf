@@ -22,7 +22,7 @@ dict_fn = fullfile(script_fp, 'dict.mat');
 % We vary T1w, T2w, Ksw and M0s in one file
 
 % Small description
-yaml_struct.description = 'A parameter file for Iohexol phantom CEST-MRF experiment';
+yaml_struct.description = 'A parameter file for L-arginine phantom CEST-MRF experiment';
 
 % Water_pool
 yaml_struct.water_pool.t1 = (2500:50:3300) ./ 1000; %vary t1
