@@ -41,11 +41,9 @@ Once the packages are installed, run **deep_reco.py**
 
 The script will use the file dict.mat, generated in the previous steps, as well as the file acquired_data.mat, available in this folder.
 
-** This repository is associated with a review paper called: "Deep Learning Based MR Fingerprinting for Semisolid Magnetization Transfer and Chemical Exchange Saturation Transfer Quantification".
+### This repository is associated with a review paper called: "Deep Learning Based MR Fingerprinting for Semisolid Magnetization Transfer and Chemical Exchange Saturation Transfer Quantification". Additional details will be provided soon. 
 
-Additional details will be provided soon. 
-
-In the meanwhile, if you use this code in a scientific publication please cite one or more of the following relevant papers:
+**In the meanwhile, if you use this code in a scientific publication please cite one or more of the following relevant papers:**
 1) Perlman, O, Herz, K, Zaiss, M, Cohen, O, Rosen, MS, Farrar, CT. CEST MR-Fingerprinting: Practical considerations and insights for acquisition schedule design and improved reconstruction. Magn Reson Med. 2020; 83: 462– 478. https://doi.org/10.1002/mrm.27937 
 
 2) Herz, K, Mueller, S, Perlman, O, et al. Pulseq-CEST: Towards multi-site multi-vendor compatibility and reproducibility of CEST experiments using an open-source sequence standard. Magn Reson Med. 2021; 86: 1845– 1858. https://doi.org/10.1002/mrm.28825 
