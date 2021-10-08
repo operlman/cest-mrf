@@ -215,7 +215,7 @@ plt.show()
 
 #  >>> Optional - loading a previously saved model, loss, and optimizer state
 # checkpoint = torch.load('checkpoint')
-# reco_net.state_dict = checkpoint['model_state_dict']
+# reco_net.load_state_dict(checkpoint['model_state_dict'])
 # loss_per_epoch = checkpoint['loss_per_epoch']
 # optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 # <<<
