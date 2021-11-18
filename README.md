@@ -48,6 +48,6 @@ The script will use the file dict.mat, generated in the previous steps, as well 
 
 2) Herz, K, Mueller, S, Perlman, O, et al. Pulseq-CEST: Towards multi-site multi-vendor compatibility and reproducibility of CEST experiments using an open-source sequence standard. Magn Reson Med. 2021; 86: 1845– 1858. https://doi.org/10.1002/mrm.28825 
  
-3) Perlman, O., Ito, H., Herz, K., Shono, N., Nakashima, H., Zaiss, M., Chiocca, E.A., Cohen, O., Rosen, M.S. and Farrar, C.T., 2020. AI boosted molecular MRI for apoptosis detection in oncolytic virotherapy. bioRxiv.
+3) Perlman, O., Ito, H., Herz, K., Shono, N., Nakashima, H., Zaiss, M., Chiocca, E.A., Cohen, O., Rosen, M.S. and Farrar, C.T., 2021. Quantitative imaging of apoptosis following oncolytic virotherapy by magnetic resonance fingerprinting aided by deep learning. Nature Biomedical Engineering, pp.1-10.
 
 4) Cohen, O, Huang, S, McMahon, MT, Rosen, MS, Farrar, CT. Rapid and quantitative chemical exchange saturation transfer (CEST) imaging with magnetic resonance fingerprinting (MRF). Magn Reson Med. 2018; 80: 2449– 2463. https://doi.org/10.1002/mrm.27221 
