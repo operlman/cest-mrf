@@ -44,7 +44,7 @@ The script will use the file dict.mat, generated in the previous steps, as well 
 ### This repository is associated with the review paper:  
 Perlman, O, Farrar, CT, Heo, H-Y. MR Fingerprinting for Semisolid Magnetization Transfer and Chemical Exchange Saturation Transfer Quantification. NMR in Biomedicine. 2022;. e4710 https://doi.org/10.1002/nbm.4710 
 
-**If you use this code in a scientific publication please cite the above reference.** 
+### If you use this code in a scientific publication please cite the above reference.
 
 **Additional relevant papers:**
 1) Perlman, O, Herz, K, Zaiss, M, Cohen, O, Rosen, MS, Farrar, CT. CEST MR-Fingerprinting: Practical considerations and insights for acquisition schedule design and improved reconstruction. Magn Reson Med. 2020; 83: 462– 478. https://doi.org/10.1002/mrm.27937 
