@@ -54,3 +54,8 @@ Perlman, O, Farrar, CT, Heo, H-Y. MR Fingerprinting for Semisolid Magnetization 
 3) Perlman, O., Ito, H., Herz, K., Shono, N., Nakashima, H., Zaiss, M., Chiocca, E.A., Cohen, O., Rosen, M.S. and Farrar, C.T., 2021. Quantitative imaging of apoptosis following oncolytic virotherapy by magnetic resonance fingerprinting aided by deep learning. Nature Biomedical Engineering, pp.1-10. https://doi.org/10.1038/s41551-021-00809-7
 
 4) Cohen, O, Huang, S, McMahon, MT, Rosen, MS, Farrar, CT. Rapid and quantitative chemical exchange saturation transfer (CEST) imaging with magnetic resonance fingerprinting (MRF). Magn Reson Med. 2018; 80: 2449– 2463. https://doi.org/10.1002/mrm.27221 
+
+
+###  Update - May 10, 2022 ### 
+###  The Semisolid-MT/CEST MRF Demo was presented at the ISMRM 2022 Cellular and Molecular Study group meeting:  ### 
+* The interactive demo presented is now available in this repository as: ### CESTmtMRF_ISMRM2022.zip ###
