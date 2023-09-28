@@ -5,6 +5,7 @@
 % Output: PMEX:    input struct for mex function
 %         dict:    dictionary variable, for now filled with parameters
 %                  combinations
+% Modified by N.Vladimirov 2023 to generate multipool case
 
 function [PMEX, dict] = read_mrf_simulation_params(yaml_fn)
 
@@ -45,26 +46,35 @@ if isfield(params, 'cest_pool')
     cp = params.cest_pool;
     pool_names = fieldnames(cp);
     num_pools = numel(pool_names);
+    PMEX.CESTPool(num_pools) = struct('R1',[],'R2',[],'f',[],'k',[],'dw',[]);
+
     % only 1 cest pool so far
-    for p = 1
+    for p = 1:num_pools
         cpool = cp.(pool_names{p});
         if ~isfield(cpool, 'f') || ...
                 ~isfield(cpool, 't1') || ~isfield(cpool, 't2') || ...
                 ~isfield(cpool, 'k') || ~isfield(cpool, 'dw')
             error([pool_names{p} ' must contain "f/c", "t1" , "t2", "k" and "dw"']);
         end
+        
+        % Dynamic field names based on pool number
+        t1_field_name = sprintf('t1s_%d', p);
+        t2_field_name = sprintf('t2s_%d', p);
+        f_field_name = sprintf('fs_%d', p);
+        k_field_name = sprintf('ksw_%d', p);
+        
         % fill the dictionary struct
-        dict.variables.t1s = get_variable_param(cpool.t1);
-        dict.variables.t2s = get_variable_param(cpool.t2);
-        dict.variables.fs = get_variable_param(cpool.f);
-        dict.variables.ksw = get_variable_param(cpool.k);
+        dict.variables.(t1_field_name) = get_variable_param(cpool.t1);
+        dict.variables.(t2_field_name) = get_variable_param(cpool.t2);
+        dict.variables.(f_field_name)  = get_variable_param(cpool.f);
+        dict.variables.(k_field_name)  = get_variable_param(cpool.k);
         
         % fill the pmex struct
-        PMEX.CESTPool.R1 = 1.0/dict.variables.t1s(1);
-        PMEX.CESTPool.R2 = 1.0/dict.variables.t2s(1);
-        PMEX.CESTPool.f  = dict.variables.fs(1);
-        PMEX.CESTPool.k  = dict.variables.ksw(1);
-        PMEX.CESTPool.dw = cpool.dw;
+        PMEX.CESTPool(p).R1 = 1.0/dict.variables.(t1_field_name)(1);
+        PMEX.CESTPool(p).R2 = 1.0/dict.variables.(t2_field_name)(1);
+        PMEX.CESTPool(p).f  = dict.variables.(f_field_name)(1);
+        PMEX.CESTPool(p).k  = dict.variables.(k_field_name)(1);
+        PMEX.CESTPool(p).dw = cpool.dw;
 
     end
 else
@@ -156,5 +166,4 @@ end
         end
     end
 end
-
 

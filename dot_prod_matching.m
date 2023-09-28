@@ -63,10 +63,10 @@ for ind = 1:length(batch_indices)
     [dp(batch_indices(ind):batch_indices(ind) + batch_size - 1), dp_ind] = max(current_score, [], 2);
     t1w(batch_indices(ind):batch_indices(ind) + batch_size - 1) = dict.t1w(dp_ind);
     t2w(batch_indices(ind):batch_indices(ind) + batch_size - 1) = dict.t2w(dp_ind);
-    t1s(batch_indices(ind):batch_indices(ind) + batch_size - 1) = dict.t1s(dp_ind);
-    t2s(batch_indices(ind):batch_indices(ind) + batch_size - 1) = dict.t2s(dp_ind);
-    fs(batch_indices(ind):batch_indices(ind) + batch_size - 1) = dict.fs(dp_ind);
-    ksw(batch_indices(ind):batch_indices(ind) + batch_size - 1) = dict.ksw(dp_ind);
+    t1s(batch_indices(ind):batch_indices(ind) + batch_size - 1) = dict.t1s_1(dp_ind);
+    t2s(batch_indices(ind):batch_indices(ind) + batch_size - 1) = dict.t2s_1(dp_ind);
+    fs(batch_indices(ind):batch_indices(ind) + batch_size - 1) = dict.fs_1(dp_ind);
+    ksw(batch_indices(ind):batch_indices(ind) + batch_size - 1) = dict.ksw_1(dp_ind);
     
     % Display progress every 10 percent
     if mod(ind/length(batch_indices).*100, 10) == 0

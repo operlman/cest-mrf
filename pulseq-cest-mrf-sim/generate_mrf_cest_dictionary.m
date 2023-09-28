@@ -6,6 +6,7 @@
 %         dict_fn:     (optional) filename of resulting dictionary .mat file 
 %         num_workers: (optional) number of workers for parpool
 %
+% Modified by N.Vladimirov 2023 to generate multipool case
 
 function dict = generate_mrf_cest_dictionary(seq_fn, param_fn, dict_fn, num_workers)
 % if no input, let the user use the ui
@@ -88,10 +89,13 @@ parfor w = 1:pp.NumWorkers
         PMEX_local.WaterPool.R1 = 1.0/dict_local.t1w(c);
         PMEX_local.WaterPool.R2 = 1.0/dict_local.t2w(c);
         if isfield(PMEX_local, 'CESTPool')
-            PMEX_local.CESTPool.R1 = 1.0/dict_local.t1s(c);
-            PMEX_local.CESTPool.R2 = 1.0/dict_local.t2s(c);
-            PMEX_local.CESTPool.f = dict_local.fs(c);
-            PMEX_local.CESTPool.k = dict_local.ksw(c);
+            numCESTPools = numel(PMEX_local.CESTPool);
+            for p = 1:numCESTPools
+                PMEX_local.CESTPool(p).R1 = 1.0/dict_local.(['t1s_' num2str(p)])(c);
+                PMEX_local.CESTPool(p).R2 = 1.0/dict_local.(['t2s_' num2str(p)])(c);
+                PMEX_local.CESTPool(p).f  = dict_local.(['fs_' num2str(p)])(c);
+                PMEX_local.CESTPool(p).k  = dict_local.(['ksw_' num2str(p)])(c);
+            end
         end
         if isfield(PMEX_local, 'MTPool')
             PMEX_local.MTPool.R1 = 1.0/dict_local.t1ss(c);
@@ -102,6 +106,8 @@ parfor w = 1:pp.NumWorkers
         pulseq_cest_mex('update', PMEX_local);
         Mout = pulseq_cest_mex('run');
         waterSignalPar{w}(:,idx) = sqrt(Mout(1,:).^2+Mout(nTotalPools+1,:).^2);
+%         waterSignalPar{w}(:,idx) = Mout((nTotalPools+1)*2,:);
+
         idx = idx+1;
     end
     pulseq_cest_mex('close');
@@ -115,4 +121,3 @@ dict = rmfield(dict,'variables');
 
 %% save dict
 save(dict_fn, 'dict');
-
